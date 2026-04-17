@@ -63,7 +63,7 @@ Every DPIT cycle produces one Bug Fix Document. This is the single source of tru
 ### Naming Convention
 
 ```
-phase_bugfix_YYYYMMDD_description.md
+/phase/bugfix/phase_bugfix_YYYYMMDD_description.md
 ```
 
 - `YYYYMMDD` = date the cycle started
@@ -72,9 +72,9 @@ phase_bugfix_YYYYMMDD_description.md
 
 **Examples:**
 ```
-phase_bugfix_20260417_memory-leak.md
-phase_bugfix_20260417_api-timeout_0.md
-phase_bugfix_20260417_api-timeout_1.md
+/phase/bugfix/phase_bugfix_20260417_memory-leak.md
+/phase/bugfix/phase_bugfix_20260417_api-timeout_0.md
+/phase/bugfix/phase_bugfix_20260417_api-timeout_1.md
 ```
 
 ### Document Template
@@ -157,6 +157,7 @@ Paste test output here.
 
 ### Step 1.6 — Log the Diagnosis
 - Ensure `/phase/bugfix` directory exists. If not present, create it before proceeding.
+- Create the Bug Fix Document file using the naming convention above.
 - Fill in the **Diagnosis** section of the Bug Fix Document.
 - Be specific. "it crashes" is not a root cause. "it crashes because `user` is null when `authMiddleware` does not handle an unauthenticated request" is a root cause.
 
@@ -183,7 +184,7 @@ Paste test output here.
 
 ### Step 2.4 — Create Todo List
 - After writing the plan, create a Task for each task item using TaskCreate.
-- Use the Bug Fix Document filename as the task subject prefix (e.g., `[phase_bugfix_YYYYMMDD_description] Task 1: description`).
+- Use the Bug Fix Document filename as the task subject prefix (e.g., `[phase_bugfix_20260417] Task 1: description`).
 - Mark each task as `pending` status.
 
 ---
@@ -211,10 +212,12 @@ Before touching any file, confirm:
 
 For each task in the plan:
 1. Read the relevant file(s) in full before editing.
-2. Make the change.
-3. Run type checking.
-4. If a test exists for this area, run it.
-5. Update the Bug Fix Document's **Implementation** table.
+2. Mark the corresponding Task as `in_progress` using TaskUpdate.
+3. Make the change.
+4. Run type checking.
+5. If a test exists for this area, run it.
+6. Update the Bug Fix Document's **Implementation** table.
+7. Mark the corresponding Task as `completed` using TaskUpdate.
 
 ### Completion Check
 
@@ -293,3 +296,4 @@ Trigger this loop whenever a test fails after a fix attempt.
 | Revision | Date | Changes | Author |
 |----------|------|---------|--------|
 | 1.0 | 2026-04-17 | Initial release | Claude |
+| 1.1 | 2026-04-17 | Fix task tracking, document creation, path consistency, table mismatch | Claude |
