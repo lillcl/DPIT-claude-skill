@@ -60,7 +60,7 @@ DIAGNOSE → PLAN → IMPLEMENT → TEST
 
 ## Installation
 
-### Option A — Plugin (recommended, two commands)
+### Option A — Plugin (recommended)
 
 From within Claude Code:
 
@@ -78,9 +78,8 @@ This installs the skill globally, making it available in all projects.
 # Unix/macOS
 bash -c "mkdir -p ~/.claude/skills && git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git /tmp/dpit-clone && cp -r /tmp/dpit-clone/skills/dpit ~/.claude/skills/dpit && rm -rf /tmp/dpit-clone"
 
-# Windows (from Command Prompt or PowerShell)
-# If already in PowerShell, run directly:
-git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git %TEMP%\dpit-clone && xcopy /E /I %TEMP%\dpit-clone\skills\dpit %USERPROFILE%\.claude\skills\dpit && rmdir /S /Q %TEMP%\dpit-clone
+# Windows (PowerShell)
+powershell -Command "git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git $env:TEMP\dpit-clone; Copy-Item -Recurse $env:TEMP\dpit-clone\skills\dpit $env:USERPROFILE\.claude\skills\dpit; Remove-Item -Recurse -Force $env:TEMP\dpit-clone"
 ```
 
 ### Option C — Clone and run install script
