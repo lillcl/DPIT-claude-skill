@@ -80,12 +80,16 @@ This installs the skill globally, making it available in all projects.
 
 ### Option B — One-line install (git)
 
+**Unix/macOS:**
 ```bash
-# Unix/macOS
 bash -c "mkdir -p ~/.claude/skills && git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git /tmp/dpit-clone && cp -r /tmp/dpit-clone/skills/dpit ~/.claude/skills/dpit && rm -rf /tmp/dpit-clone"
+```
 
-# Windows (PowerShell)
-powershell -Command "git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git $env:TEMP\dpit-clone; Copy-Item -Recurse $env:TEMP\dpit-clone\skills\dpit $env:USERPROFILE\.claude\skills\dpit; Remove-Item -Recurse -Force $env:TEMP\dpit-clone"
+**Windows (PowerShell):**
+```powershell
+git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git $env:TEMP\dpit-clone
+Copy-Item -Recurse $env:TEMP\dpit-clone\skills\dpit $env:USERPROFILE\.claude\skills\dpit
+Remove-Item -Recurse -Force $env:TEMP\dpit-clone
 ```
 
 ### Option C — Clone and run install script
