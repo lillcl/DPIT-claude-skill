@@ -1,5 +1,8 @@
 # claude-dpit
 
+**Author:** Isaac Leong  
+**Email:** isaacleong12345@gmail.com
+
 **A systematic bug-fix workflow for Claude Code.**
 
 DPIT (Diagnose-Plan-Implement-Test) is a skill that forces discipline at every stage of bug fixing — from understanding the root cause to writing a regression guard.
@@ -15,6 +18,46 @@ When invoked, DPIT walks through four phases:
 
 It also produces a structured **Bug Fix Document** (`phase_bugfix_YYYYMMDD_description.md`) as a single source of truth for the entire fix cycle.
 
+## The Problem
+
+Most developers fix bugs by guessing → coding → testing quickly → moving on. This fails.
+
+| Issue | Consequence |
+| ----- | ----------- |
+| No root cause analysis | Same bug returns next week |
+| No regression tests | Fixes break other features |
+| No documentation | Nobody knows why code changed |
+| No severity system | Typos get same urgency as data loss |
+
+**Result:** Teams spend 40-50% of time fixing the same bugs repeatedly.
+
+## The Solution
+
+DPIT forces discipline through four phases:
+
+```
+DIAGNOSE → PLAN → IMPLEMENT → TEST
+```
+
+| Phase | Action |
+| ----- | ------ |
+| **Diagnose** | Write root cause. Prove you understand why it breaks. |
+| **Plan** | Define exactly what changes, in what order. |
+| **Implement** | Execute plan. No scope creep. Type checking passes. |
+| **Test** | Verify fix. Write a regression guard that keeps bug dead. |
+
+**Output:** `phase_bugfix_YYYYMMDD_description.md` — a single document capturing symptom, root cause, plan, changes, and verification.
+
+**Priority matrix:** P0 (Critical — stop everything) → P1 (High) → P2 (Medium) → P3 (Low)
+
+## Principles
+
+- **Fix root cause, not symptom** — If you can't explain why it breaks, you can't proceed.
+- **Regression test first** — No fix is complete without a guard that proves it stays fixed.
+- **Smallest change possible** — Scope creep creates bugs.
+- **Type checking passes** — No exceptions.
+- **Document every fix** — Unwritten fixes are unfixed fixes.
+
 ## Installation
 
 ### Option A — Plugin (recommended, two commands)
@@ -23,6 +66,9 @@ From within Claude Code:
 
 ```
 /plugin marketplace add lillcl/DPIT-claude-skill
+
+then
+
 /plugin install lillcl/DPIT-claude-skill@dpit
 ```
 
@@ -77,12 +123,12 @@ Then follow the prompts. The skill will:
 
 Every bug is classified before work begins:
 
-| Level | Name | Definition |
-|-------|------|------------|
-| P0 | Critical | Data loss, security vulnerability, or system completely inoperative |
-| P1 | High | A core feature is broken — workaround exists but must be fixed soon |
-| P2 | Medium | A non-critical feature is broken — workaround exists |
-| P3 | Low | Cosmetic or edge-case — no real impact on users |
+| Level | Name     | Definition                                                          |
+| ----- | -------- | ------------------------------------------------------------------- |
+| P0    | Critical | Data loss, security vulnerability, or system completely inoperative |
+| P1    | High     | A core feature is broken — workaround exists but must be fixed soon |
+| P2    | Medium   | A non-critical feature is broken — workaround exists                |
+| P3    | Low      | Cosmetic or edge-case — no real impact on users                     |
 
 P0 issues are worked on **immediately**, before anything else.
 
@@ -104,6 +150,7 @@ See the [full skill documentation](skills/dpit/SKILL.md) for the complete templa
 - **Write the regression test first.** A bug without a regression test is a bug waiting to come back.
 - **Make the smallest change that solves the problem.** Scope creep creates bugs.
 - **Type checking passes before you continue.** No exceptions.
+
 
 ## Files
 
