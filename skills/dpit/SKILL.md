@@ -58,6 +58,8 @@ A bug is considered **Verified** only when all of the above are true AND the fix
 
 Every DPIT cycle produces one Bug Fix Document. This is the single source of truth for the cycle.
 
+**Location:** All Bug Fix Documents are stored in `/phase/bugfix/`. Ensure this directory exists before creating any document. Create it if missing.
+
 ### Naming Convention
 
 ```
@@ -154,6 +156,7 @@ Paste test output here.
 - If severity is P0 or P1, notify the user immediately before proceeding.
 
 ### Step 1.6 — Log the Diagnosis
+- Ensure `/phase/bugfix` directory exists. If not present, create it before proceeding.
 - Fill in the **Diagnosis** section of the Bug Fix Document.
 - Be specific. "it crashes" is not a root cause. "it crashes because `user` is null when `authMiddleware` does not handle an unauthenticated request" is a root cause.
 
@@ -174,8 +177,14 @@ Paste test output here.
 - Flag any task that might unexpectedly break other things ("risky change — verify X after").
 
 ### Step 2.3 — Write the Plan
+- Ensure `/phase/bugfix` directory exists. If not present, create it before proceeding.
 - Fill in the **Plan** section of the Bug Fix Document.
 - Include expected outcome — what will be true after the fix that is not true now?
+
+### Step 2.4 — Create Todo List
+- After writing the plan, create a Task for each task item using TaskCreate.
+- Use the Bug Fix Document filename as the task subject prefix (e.g., `[phase_bugfix_YYYYMMDD_description] Task 1: description`).
+- Mark each task as `pending` status.
 
 ---
 

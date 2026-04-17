@@ -16,7 +16,7 @@ When invoked, DPIT walks through four phases:
 3. **Implement** — Execute the plan with minimal, surgical changes
 4. **Test** — Verify the fix, run regressions, write a regression guard
 
-It also produces a structured **Bug Fix Document** (`phase_bugfix_YYYYMMDD_description.md`) as a single source of truth for the entire fix cycle.
+It also produces a structured **Bug Fix Document** (`/phase/bugfix/phase_bugfix_YYYYMMDD_description.md`) as a single source of truth for the entire fix cycle. After planning, tasks are automatically converted to a todo list for tracking.
 
 ## The Problem
 
@@ -132,10 +132,10 @@ P0 issues are worked on **immediately**, before anything else.
 
 ## The Bug Fix Document
 
-A structured markdown file created for every DPIT cycle. Named:
+A structured markdown file created for every DPIT cycle. Stored in `/phase/bugfix/`:
 
 ```
-phase_bugfix_YYYYMMDD_description.md
+/phase/bugfix/phase_bugfix_YYYYMMDD_description.md
 ```
 
 Contains: Symptom → Root Cause → Plan → Implementation Changes → Verification Results.
@@ -160,6 +160,8 @@ claude-dpit/
 ├── skills/
 │   └── dpit/
 │       └── SKILL.md         # The skill itself
+├── phase/
+│   └── bugfix/              # Bug Fix Documents created during DPIT cycles
 ├── CLAUDE.md                # Project-level instructions (for Claude Code)
 ├── README.md                # This file
 ├── install.sh               # Unix/macOS install script
