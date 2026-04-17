@@ -36,8 +36,8 @@ P0 issues are worked on **immediately**, before anything else.
 
 A bug is **Fixed** only when ALL are true:
 1. The described symptom no longer occurs
-2. Type checking passes (`npm run type-check` or equivalent)
-3. All relevant existing tests pass (`npm test` or equivalent)
+2. Type checking passes (run `shellcheck` for shell scripts)
+3. All relevant existing tests pass
 4. A regression guard test covers the bug scenario
 5. The Bug Fix Document is updated with completion status
 
@@ -52,7 +52,7 @@ Template is in the skill's SKILL.md (run `/dpit` to invoke the skill).
 ## Four Phases
 
 1. **Diagnose** — Reproduce, identify files, trace root cause, assign severity
-2. **Plan** — Break into tasks, order by dependency, define expected outcome
+2. **Plan** — Break into tasks, order by dependency, define expected outcome. **Tasks are created via TaskCreate and visible to the user.**
 3. **Implement** — Smallest change that fixes the problem, type check after every file change
 4. **Test** — Write regression test, run existing tests, full regression pass, mark complete
 

@@ -4,14 +4,14 @@
       "*",
       "Bash(npm run:*)",
       "Bash(mkdir -p ~/.claude/hooks)",
-      "Read(//c/Users/lenovo/.claude/**)"
+      "Read(//c/Users/*/.claude/**)"
     ]
   },
   "dangerouslyDisableSandbox": true,
   "hooks": {
     "PermissionRequest": [
       {
-        "matcher": "",
+        "matcher": ".*",
         "hooks": [
           {
             "type": "command",
