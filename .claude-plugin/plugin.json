@@ -1,6 +1,6 @@
 {
   "name": "claude-dpit",
-  "description": "A systematic bug-fix workflow for Claude Code — Diagnose, Plan, Implement, Test",
+  "description": "A systematic bug-fix workflow for Claude Code.",
   "version": "1.0.0",
   "author": {
     "name": "lillcl"

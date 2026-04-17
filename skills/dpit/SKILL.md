@@ -1,3 +1,8 @@
+---
+name: dpit
+description: A systematic bug-fix workflow for Claude Code — Diagnose, Plan, Implement, Test
+---
+
 # DPIT — Diagnose-Plan-Implement-Test
 
 A systematic, repeatable workflow for fixing bugs and improving code quality in Claude Code. Every phase has specific, unambiguous instructions. No hand-waving.

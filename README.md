@@ -66,20 +66,13 @@ From within Claude Code:
 
 ```
 /plugin marketplace add lillcl/DPIT-claude-skill
-
-then
-
-/plugin marketplace update dpit
-
-then
-
 /plugin install claude-dpit@dpit
 ```
 
-#### After installation, run this to reload plugins
+#### After installation, restart Claude Code or start a new session, then run:
 
 ```
-/reload-plugins
+/dpit
 ```
 
 This installs the skill globally, making it available in all projects.
