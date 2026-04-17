@@ -47,7 +47,7 @@ A bug is **Verified** only when all above are true AND the fix was confirmed by 
 
 Create one per DPIT cycle. Naming: `phase_bugfix_YYYYMMDD_description.md`
 
-Template is in `~/.claude/skills/dpit/SKILL.md` (or the installed skill path).
+Template is in the skill's SKILL.md (run `/dpit` to invoke the skill).
 
 ## Four Phases
 
@@ -56,7 +56,7 @@ Template is in `~/.claude/skills/dpit/SKILL.md` (or the installed skill path).
 3. **Implement** — Smallest change that fixes the problem, type check after every file change
 4. **Test** — Write regression test, run existing tests, full regression pass, mark complete
 
-Full phase instructions are in `~/.claude/skills/dpit/SKILL.md`.
+Full phase instructions are available via `/dpit` once the skill is installed.
 
 ## Self-Improvement Loop
 

@@ -161,10 +161,10 @@ P0 issues are worked on **immediately**, before anything else.
 
 ## The Bug Fix Document
 
-A structured markdown file created for every DPIT cycle. Stored in `/phase/bugfix/`:
+A structured markdown file created for every DPIT cycle. Stored in `phase/bugfix/` (relative to your project root):
 
 ```
-/phase/bugfix/phase_bugfix_YYYYMMDD_description.md
+phase/bugfix/phase_bugfix_YYYYMMDD_description.md
 ```
 
 Contains: Symptom → Root Cause → Plan → Implementation Changes → Verification Results.
