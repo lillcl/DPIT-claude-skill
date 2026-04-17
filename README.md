@@ -66,22 +66,21 @@ From within Claude Code:
 
 ```
 /plugin marketplace add lillcl/DPIT-claude-skill
-
-then
-
-/plugin install lillcl/DPIT-claude-skill@dpit
+/plugin marketplace update dpit
+/plugin install claude-dpit@dpit
 ```
 
 This installs the skill globally, making it available in all projects.
 
-### Option B — One-line install (curl)
+### Option B — One-line install (git)
 
 ```bash
 # Unix/macOS
-bash -c "mkdir -p ~/.claude/skills && curl -sL https://github.com/lillcl/DPIT-claude-skill/archive/main.tar.gz | tar xz -C ~/.claude/skills --strip-components=1 --transform='s/DPIT-claude-skill-main/dpit/'"
+bash -c "mkdir -p ~/.claude/skills && git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git /tmp/dpit-clone && cp -r /tmp/dpit-clone/skills/dpit ~/.claude/skills/dpit && rm -rf /tmp/dpit-clone"
 
-# Windows (PowerShell)
-iex "New-Item -ItemType Directory -Force -Path $env:USERPROFILE\.claude\skills\dpit | Out-Null; Invoke-WebRequest -Uri 'https://github.com/lillcl/DPIT-claude-skill/archive/main.tar.gz' -OutFile '$env:TEMP\dpit.tar.gz'; tar -xzf $env:TEMP\dpit.tar.gz -C $env:USERPROFILE\.claude\skills -s '--transform=s/DPIT-claude-skill-main/dpit/'"
+# Windows (from Command Prompt or PowerShell)
+# If already in PowerShell, run directly:
+git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git %TEMP%\dpit-clone && xcopy /E /I %TEMP%\dpit-clone\skills\dpit %USERPROFILE%\.claude\skills\dpit && rmdir /S /Q %TEMP%\dpit-clone
 ```
 
 ### Option C — Clone and run install script
