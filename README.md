@@ -89,13 +89,13 @@ This installs the skill globally, making it available in all projects.
 #### Unix/macOS
 
 ```bash
-bash -c "mkdir -p ~/.claude/skills && git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git /tmp/dpit-clone && cp -r /tmp/dpit-clone/skills/dpit ~/.claude/skills/dpit && rm -rf /tmp/dpit-clone"
+bash -c "git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git /tmp/dpit-clone && mkdir -p ~/.claude/skills && cp -r /tmp/dpit-clone/skills/dpit ~/.claude/skills/dpit && rm -rf /tmp/dpit-clone"
 ```
 
 #### Windows (PowerShell)
 
 ```
-powershell -Command "git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git $env:TEMP\dpit-clone; Copy-Item -Recurse $env:TEMP\dpit-clone\skills\dpit $env:USERPROFILE\.claude\skills\dpit; Remove-Item -Recurse -Force $env:TEMP\dpit-clone"
+powershell -Command "git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git $env:TEMP\dpit-clone; New-Item -ItemType Directory -Force -Path $env:USERPROFILE\.claude\skills; Copy-Item -Recurse $env:TEMP\dpit-clone\skills\dpit $env:USERPROFILE\.claude\skills\dpit; Remove-Item -Recurse -Force $env:TEMP\dpit-clone"
 ```
 
 ### Option C — Clone and run install script
@@ -122,12 +122,14 @@ cd DPIT-claude-skill
 
 ```bash
 # Clone anywhere, then copy the skills/dpit folder to your Claude skills directory
+mkdir -p ~/.claude/skills
 cp -r skills/dpit ~/.claude/skills/
 ```
 
 #### Windows (PowerShell)
 
 ```
+New-Item -ItemType Directory -Force -Path $env:USERPROFILE\.claude\skills
 Copy-Item -Recurse skills\dpit $env:USERPROFILE\.claude\skills\dpit
 ```
 
