@@ -2,7 +2,7 @@
   "name": "dpit",
   "id": "dpit",
   "owner": {
-    "name": ""
+    "name": "lillcl"
   },
   "metadata": {
     "description": "A systematic bug-fix workflow for Claude Code — Diagnose, Plan, Implement, Test",
@@ -15,7 +15,7 @@
       "description": "A systematic bug-fix workflow — four disciplined phases: Diagnose the root cause, Plan the smallest fix, Implement surgically, Test for regressions",
       "version": "1.0.0",
       "author": {
-        "name": ""
+        "name": "lillcl"
       },
       "keywords": [
         "bug-fix",

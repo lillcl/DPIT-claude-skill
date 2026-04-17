@@ -17,28 +17,38 @@ It also produces a structured **Bug Fix Document** (`phase_bugfix_YYYYMMDD_descr
 
 ## Installation
 
-### Option A — Plugin (recommended)
+### Option A — Plugin (recommended, two commands)
 
 From within Claude Code:
 
 ```
-/plugin marketplace add <your-username>/claude-dpit
-/plugin install <your-username>/claude-dpit@dpit
+/plugin marketplace add lillcl/DPIT-claude-skill
+/plugin install lillcl/DPIT-claude-skill@dpit
 ```
 
 This installs the skill globally, making it available in all projects.
 
-### Option B — Clone and run install script
+### Option B — One-line install (curl)
 
 ```bash
-git clone https://github.com/<your-username>/claude-dpit.git
-cd claude-dpit
+# Unix/macOS
+bash -c "mkdir -p ~/.claude/skills && curl -sL https://github.com/lillcl/DPIT-claude-skill/archive/main.tar.gz | tar xz -C ~/.claude/skills --strip-components=1 --transform='s/DPIT-claude-skill-main/dpit/'"
+
+# Windows (PowerShell)
+iex "New-Item -ItemType Directory -Force -Path $env:USERPROFILE\.claude\skills\dpit | Out-Null; Invoke-WebRequest -Uri 'https://github.com/lillcl/DPIT-claude-skill/archive/main.tar.gz' -OutFile '$env:TEMP\dpit.tar.gz'; tar -xzf $env:TEMP\dpit.tar.gz -C $env:USERPROFILE\.claude\skills -s '--transform=s/DPIT-claude-skill-main/dpit/'"
+```
+
+### Option C — Clone and run install script
+
+```bash
+git clone https://github.com/lillcl/DPIT-claude-skill.git
+cd DPIT-claude-skill
 ./install.sh        # Unix/macOS
 # or
 .\install.ps1       # Windows
 ```
 
-### Option C — Manual copy
+### Option D — Manual copy
 
 ```bash
 # Clone anywhere, then copy the skills/dpit folder to your Claude skills directory
