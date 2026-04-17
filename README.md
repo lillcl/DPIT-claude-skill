@@ -22,12 +22,12 @@ It also produces a structured **Bug Fix Document** (`/phase/bugfix/phase_bugfix_
 
 Most developers fix bugs by guessing → coding → testing quickly → moving on. This fails.
 
-| Issue | Consequence |
-| ----- | ----------- |
-| No root cause analysis | Same bug returns next week |
-| No regression tests | Fixes break other features |
-| No documentation | Nobody knows why code changed |
-| No severity system | Typos get same urgency as data loss |
+| Issue                  | Consequence                         |
+| ---------------------- | ----------------------------------- |
+| No root cause analysis | Same bug returns next week          |
+| No regression tests    | Fixes break other features          |
+| No documentation       | Nobody knows why code changed       |
+| No severity system     | Typos get same urgency as data loss |
 
 **Result:** Teams spend 40-50% of time fixing the same bugs repeatedly.
 
@@ -39,12 +39,12 @@ DPIT forces discipline through four phases:
 DIAGNOSE → PLAN → IMPLEMENT → TEST
 ```
 
-| Phase | Action |
-| ----- | ------ |
-| **Diagnose** | Write root cause. Prove you understand why it breaks. |
-| **Plan** | Define exactly what changes, in what order. |
-| **Implement** | Execute plan. No scope creep. Type checking passes. |
-| **Test** | Verify fix. Write a regression guard that keeps bug dead. |
+| Phase         | Action                                                    |
+| ------------- | --------------------------------------------------------- |
+| **Diagnose**  | Write root cause. Prove you understand why it breaks.     |
+| **Plan**      | Define exactly what changes, in what order.               |
+| **Implement** | Execute plan. No scope creep. Type checking passes.       |
+| **Test**      | Verify fix. Write a regression guard that keeps bug dead. |
 
 **Output:** `phase_bugfix_YYYYMMDD_description.md` — a single document capturing symptom, root cause, plan, changes, and verification.
 
@@ -66,7 +66,13 @@ From within Claude Code:
 
 ```
 /plugin marketplace add lillcl/DPIT-claude-skill
+
+then
+
 /plugin marketplace update dpit
+
+then
+
 /plugin install claude-dpit@dpit
 ```
 
@@ -148,7 +154,6 @@ See the [full skill documentation](skills/dpit/SKILL.md) for the complete templa
 - **Write the regression test first.** A bug without a regression test is a bug waiting to come back.
 - **Make the smallest change that solves the problem.** Scope creep creates bugs.
 - **Type checking passes before you continue.** No exceptions.
-
 
 ## Files
 
