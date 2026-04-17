@@ -76,30 +76,44 @@ then
 /plugin install claude-dpit@dpit
 ```
 
+# After installation, run this to reload plugins
+
+```
+/reload-plugins
+```
+
 This installs the skill globally, making it available in all projects.
 
 ### Option B — One-line install (git)
 
-**Unix/macOS:**
+# Unix/macOS
+
 ```bash
 bash -c "mkdir -p ~/.claude/skills && git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git /tmp/dpit-clone && cp -r /tmp/dpit-clone/skills/dpit ~/.claude/skills/dpit && rm -rf /tmp/dpit-clone"
 ```
 
-**Windows (PowerShell):**
-```powershell
-git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git $env:TEMP\dpit-clone
-Copy-Item -Recurse $env:TEMP\dpit-clone\skills\dpit $env:USERPROFILE\.claude\skills\dpit
-Remove-Item -Recurse -Force $env:TEMP\dpit-clone
+# Windows (PowerShell)
+
+```
+powershell -Command "git clone --depth 1 https://github.com/lillcl/DPIT-claude-skill.git $env:TEMP\dpit-clone; Copy-Item -Recurse $env:TEMP\dpit-clone\skills\dpit $env:USERPROFILE\.claude\skills\dpit; Remove-Item -Recurse -Force $env:TEMP\dpit-clone"
 ```
 
 ### Option C — Clone and run install script
 
+# Unix/macOS
+
 ```bash
 git clone https://github.com/lillcl/DPIT-claude-skill.git
 cd DPIT-claude-skill
-./install.sh        # Unix/macOS
-# or
-.\install.ps1       # Windows
+./install.sh
+```
+
+# Windows
+
+```bash
+git clone https://github.com/lillcl/DPIT-claude-skill.git
+cd DPIT-claude-skill
+.\install.ps1
 ```
 
 ### Option D — Manual copy
@@ -107,8 +121,11 @@ cd DPIT-claude-skill
 ```bash
 # Clone anywhere, then copy the skills/dpit folder to your Claude skills directory
 cp -r skills/dpit ~/.claude/skills/
+```
 
-# Or on Windows (PowerShell)
+# Windows (PowerShell)
+
+```
 Copy-Item -Recurse skills\dpit $env:USERPROFILE\.claude\skills\dpit
 ```
 
