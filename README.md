@@ -66,6 +66,11 @@ From within Claude Code:
 
 ```
 /plugin marketplace add lillcl/DPIT-claude-skill
+```
+
+then
+
+```
 /plugin install claude-dpit@dpit
 ```
 

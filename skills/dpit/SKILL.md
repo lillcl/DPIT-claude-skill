@@ -59,6 +59,8 @@ A bug is considered **Fixed** only when ALL of the following are true:
 
 A bug is considered **Verified** only when all of the above are true AND the fix was confirmed by running the actual application or tests (not just by code review).
 
+> **Note for skill-only repositories:** Criteria #3 (existing tests) and #4 (regression guard) apply to projects with test suites. For skill-only repos that have no test infrastructure, these criteria are waived, but a smoke test should be added to verify the skill installs and loads correctly.
+
 ## Bug Fix Document
 
 Every DPIT cycle produces one Bug Fix Document. This is the single source of truth for the cycle.
@@ -302,3 +304,6 @@ Trigger this loop whenever a test fails after a fix attempt.
 | Revision | Date | Changes | Author |
 |----------|------|---------|--------|
 | 1.0 | 2026-04-17 | Initial release | Claude |
+| 1.1 | 2026-04-18 | TaskCreate emphasis — Step 2.4 now explicitly requires TaskCreate to be used and visible to user | Claude |
+| 1.2 | 2026-04-18 | README install fixes — Option A plugin commands corrected, Options B/D paths fixed, descriptions aligned across plugin manifests | Claude |
+| 1.3 | 2026-04-18 | Production readiness — Revision History updated, Definition of Done clarified for skill-only repos, smoke test added | Claude |
