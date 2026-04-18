@@ -4,10 +4,15 @@
       "*",
       "Bash(npm run:*)",
       "Bash(mkdir -p ~/.claude/hooks)",
-      "Read(//c/Users/*/.claude/**)"
+      "Read(//c/Users/*/.claude/**)",
+      "WebSearch",
+      "WebFetch(domain:docs.claude.com)"
     ]
   },
-  "dangerouslyDisableSandbox": true,
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "supabase"
+  ],
   "hooks": {
     "PermissionRequest": [
       {
@@ -22,11 +27,7 @@
       }
     ]
   },
-  "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": [
-    "supabase"
-  ],
-
+  "dangerouslyDisableSandbox": true,
   "powershell": {
     "enabled": true
   },
